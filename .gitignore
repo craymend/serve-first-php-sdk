@@ -1,0 +1,6 @@
+/vendor
+/.vscode
+
+# vs code git extension
+/.history
+
