@@ -65,4 +65,15 @@ final class Response
     {
         return $this->errors;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString(){
+        return json_encode([
+            'status' => $this->status,
+            'data' => $this->data,
+            'errors' => $this->errors
+        ]);
+    }
 }

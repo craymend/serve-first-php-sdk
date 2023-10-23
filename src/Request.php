@@ -153,7 +153,7 @@ final class Request
             $headers['Authorization'] = 'Basic ' . $base64AuthKey;
         }
         if ($method === 'POST' && null !== $data) {
-            $headers['content-type'] = 'application/x-www-form-urlencoded';
+            $headers['content-type'] = 'application/json';
         }
         if(count($headers) > 0){
             $requestOptions[RequestOptions::HEADERS] = $headers;
@@ -161,7 +161,7 @@ final class Request
 
         // set data
         if ($method === 'POST' && null !== $data) {
-            $requestOptions[RequestOptions::FORM_PARAMS] = $data;
+            $requestOptions[RequestOptions::JSON] = $data;
         }else if($method === 'GET' && null !== $data){
             $requestOptions[RequestOptions::QUERY] = $data;
         }
